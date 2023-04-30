@@ -1,3 +1,5 @@
+// ################################## packages ##############################
+
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
@@ -6,32 +8,43 @@ const morgan = require("morgan");
 const port = process.env.PORT || 5000;
 const mongoose = require("mongoose");
 
+// ####################database connectivity ############################
 //by making it true only the field specified in the schema will store in databasee
-const connect = async () => {
-  try {
-    mongoose.set("strictQuery", true);
-    await mongoose.connect(process.env.DB);
-    console.log("connected to database");
-  } catch (error) {
-    // console.log(error);
-    console.log("does not connected to database");
-  }
-};
-// !important!
-// you need to install the following libraries |express|[dotenv > if required]
-// or run this command >> npm i express dotenv
-//middleware
+mongoose.set("strictQuery", true);
+mongoose.connect(process.env.DB).then(() => {
+  console.log("connected to the database");
+});
+
+//######################### built in module########################################
+const authRoutes = require("./Routes/authRoutes");
+const hotelsRoutes = require("./Routes/hotelsRoutes");
+const roomsRoutes = require("./Routes/roomsRoutes");
+const usersRoutes = require("./Routes/usersRoutes");
+
+//########################## Middleware ##############################
 app.use(express.json());
 app.use(morgan("dev"));
 
-//database connectivity
-
-//routers
-app.get("/", (req, res) => {
-  res.send("hello from simple server :)");
+//###############################routes######################################
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/users", usersRoutes);
+app.use("/api/v1/hotels", hotelsRoutes);
+app.use("/api/v1/rooms", roomsRoutes);
+app.all("*", (req, res, next) => {
+  return next(new Error("this route does not exist"));
 });
 
+app.use((err, req, res, next) => {
+  const errStatus = err.status || 500;
+  const errMessage = err.message || "something went wrong";
+  res.status(errStatus).json({
+    status: "fail",
+    status: errStatus,
+    message: errMessage,
+  });
+});
+
+// ###################################listening to server########################
 app.listen(port, () => {
-  connect();
   console.log("Server is up and running on port : " + port);
 });
