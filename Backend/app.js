@@ -7,6 +7,7 @@ dotenv.config({ path: "./.env" });
 const morgan = require("morgan");
 const port = process.env.PORT || 5000;
 const mongoose = require("mongoose");
+const cookieparser = require("cookie-parser");
 
 // ####################database connectivity ############################
 //by making it true only the field specified in the schema will store in databasee
@@ -22,6 +23,7 @@ const roomsRoutes = require("./Routes/roomsRoutes");
 const usersRoutes = require("./Routes/usersRoutes");
 
 //########################## Middleware ##############################
+app.use(cookieparser());
 app.use(express.json());
 app.use(morgan("dev"));
 

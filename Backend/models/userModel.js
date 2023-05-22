@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-      select: false,
+      // select: true,
     },
     confirmPassword: {
       type: String,
@@ -37,6 +37,7 @@ const userSchema = new mongoose.Schema(
     isAdmin: {
       type: Boolean,
       default: false,
+      // select: false,
     },
   },
   { timestamps: true }
@@ -45,7 +46,7 @@ const userSchema = new mongoose.Schema(
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
   this.password = await bcrypt.hash(this.password, 11);
-  // this.confirmPassword = undefined;
+  this.confirmPassword = undefined;
   next();
 });
 

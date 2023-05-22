@@ -1,19 +1,23 @@
 const express = require("express");
 const router = express.Router();
 const hotelsControllers = require("../controllers/hotelsControllers");
+const authControllers = require("../controllers/authControllers");
 
-router.post("/", hotelsControllers.createHotel);
+router.post("/", authControllers.verifyAdmin, hotelsControllers.createHotel);
 
-// ########################get all###########################
+router.patch(
+  "/:id",
+  authControllers.verifyAdmin,
+  hotelsControllers.updateHotel
+);
+
+router.delete(
+  "/:id",
+  authControllers.verifyAdmin,
+  hotelsControllers.deleteHotel
+);
+
 router.get("/", hotelsControllers.getAllHotels);
 
-// ########################get one###########################
 router.get("/:id", hotelsControllers.getHotel);
-
-// ########################update###########################
-// router.patch("/:id", (req, res) => {});
-router.patch("/:id", hotelsControllers.updateHotel);
-// ########################delete###########################
-router.delete("/:id", hotelsControllers.deleteHotel);
-
 module.exports = router;
