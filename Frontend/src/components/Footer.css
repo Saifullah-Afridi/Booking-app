@@ -1,0 +1,26 @@
+.footer {
+  width: 100%;
+  max-width: 1024px;
+  font-size: 12px;
+}
+
+.footer-container {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.footer-container-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-container-item {
+  color: #005380;
+  cursor: pointer;
+}
+
+.footer-container-items {
+  list-style-type: none;
+}
