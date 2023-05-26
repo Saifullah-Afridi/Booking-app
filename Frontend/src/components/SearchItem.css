@@ -1,0 +1,107 @@
+.searchitem-container {
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.searchitem-container-wraper {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.searchitem-container-img {
+  width: 200px;
+  object-fit: cover;
+}
+.searchitem-container-description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 2;
+}
+.searchitem-container-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.searchitem-container-description-title {
+  font-size: 20px;
+  color: #0071c2;
+}
+.searchitem-container-description-distance {
+  font-size: 12px;
+}
+
+.searchitem-container-description-taxioption {
+  font-size: 12px;
+  background-color: #008009;
+  color: white;
+  width: max-content;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.searchitem-container-description-subtitle {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.searchitem-container-description-features {
+  font-size: 12px;
+}
+
+.searchitem-container-description-canceloption {
+  font-size: 12px;
+  color: #008009;
+  font-weight: bold;
+}
+
+.searchitem-container-description-cancel-subtitile-option {
+  font-size: 12px;
+  color: #008009;
+}
+.search-item-rating {
+  display: flex;
+  justify-content: space-between;
+}
+.search-item-rating-span {
+  font-weight: bold;
+}
+
+.search-item-rating > button {
+  background-color: #0071c2;
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+  border: none;
+}
+
+.searchitemdetails-text {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchitemdetails-text-price {
+  font-size: 24px;
+}
+.searchitemdetails-text-price-d {
+  font-size: 12px;
+  color: gray;
+  margin: 5px 0px 5px 0px;
+}
+
+.searchitem-check-button {
+  background-color: #0071c2;
+  color: white;
+  font-weight: bold;
+  padding: 10px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

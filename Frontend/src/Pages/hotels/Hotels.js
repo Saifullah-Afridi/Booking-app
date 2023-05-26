@@ -94,11 +94,7 @@ const Hotels = () => {
             <SearchItem></SearchItem>
             <SearchItem></SearchItem>
             <SearchItem></SearchItem>
-            <SearchItem></SearchItem>
-            <SearchItem></SearchItem>
-            <SearchItem></SearchItem>
-            <SearchItem></SearchItem>
-            <SearchItem></SearchItem>
+            <SearchItem></SearchItem>s
           </div>
         </div>
       </div>
