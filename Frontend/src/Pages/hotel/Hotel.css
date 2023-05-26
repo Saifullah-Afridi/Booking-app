@@ -1,0 +1,144 @@
+.hotel-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.hotel-wrapper {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.hotel-title {
+  font-size: 24px;
+}
+.hotel-address {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hotel-distance {
+  color: #0071c2;
+  font-weight: 500;
+}
+
+.hotel-price-highlight {
+  color: #008009;
+  font-weight: 500;
+}
+.hotel-image-wrapper {
+  width: 33%;
+}
+
+.hotel-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.hotel-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.booknow {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  border: none;
+  padding: 10px;
+  color: white;
+  background-color: #0071c2;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hotel-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.hotel-detail-text {
+  flex: 3;
+}
+
+.hotel-detail-price {
+  flex: 1;
+  background-color: #d9e5f7;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hotel-descrp {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.hotel-detail-price > h1 {
+  font-size: 18px;
+  color: #555;
+}
+
+.hotel-detail-price > span {
+  font-size: 14px;
+}
+.hotel-detail-price > h2 {
+  font-weight: 300;
+}
+.hotel-detail-price > button {
+  border: none;
+  padding: 10px;
+  color: white;
+  background-color: #0071c2;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.slider {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.42);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+}
+
+.slider-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderimg {
+  width: 80%;
+  height: 80vh;
+}
+
+.cancel-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.arrow {
+  margin: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
