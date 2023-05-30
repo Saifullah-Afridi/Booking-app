@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use("/api/auth", authenticationRoutes);
 app.use("/api/hotels", hotelRoutes);
 app.use("/api/users", userRoutes);
-app.use("/api/room", roomRoutes);
+app.use("/api/rooms", roomRoutes);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.Status || 500;
